@@ -3,10 +3,12 @@ name: Autotest
 
 # Триггеры для запуска workflow
 on:
-  # Автоматический запуск workflow по расписанию (в полночь каждый день)
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
   schedule:
     - cron: "0 0 * * *"
-  # Ручной запуск workflow
   workflow_dispatch:
     
 # Задание для workflow
