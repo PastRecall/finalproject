@@ -3,22 +3,11 @@ name: Autotest
 
 # Триггеры для запуска workflow
 on:
-  push:
-    branches: [main, master]
-  pull_request:
-    branches: [main, master]
-  # Автоматический запуск workflow по расписанию (в полночь каждый день)
-  schedule:
-    - cron: "0 0 * * *"
-  # Ручной запуск workflow
   workflow_dispatch:
-
 # Задание для workflow  
 jobs:
-  autotests: 
-    # Время ожидания для задания (60 минут)
-    timeout-minutes: 60
-    # Среда для выполнения задания (Ubuntu)
+  run_test:
+    timeout-minutes: 10
     runs-on: ubuntu-latest
 
     # Шаги для задания
