@@ -1,5 +1,5 @@
 # Название workflow
-name: Autotest
+name: Finalproject Autotest
 
 # Триггеры для запуска workflow
 on:
