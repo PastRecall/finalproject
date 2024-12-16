@@ -7,6 +7,6 @@ allure-results/
 /playwright/.cache/
 notifications/allure-notifications-4.8.0
 eslint.config.mjs
-.prettierignore
-.prettierrc
+test/.prettierignore
+test/.prettierrc
 
