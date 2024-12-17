@@ -3,7 +3,7 @@
 
 ## Содержание
 - <a href="#cases"> Тест-кейсы</a>
-- <a href="#install"> Установка зависемостей</a>
+- <a href="#install"> Установка зависимостей</a>
 - <a href="#autotests"> Запуск автотестов</a>
 - <a href="#generateAllureReport"> Генерация отчетов</a>
 - <a href="#jenkins"> Сборка в Jenkins</a>
