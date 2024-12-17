@@ -26,9 +26,9 @@
     "globals": "^15.13.0"
   },
   "dependencies": {
-    "eslint-config-prettier": "^9.1.0",
-    "prettier": "^3.4.2",
     "axios": "^1.7.9",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.7",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.4.2"
   }
 }

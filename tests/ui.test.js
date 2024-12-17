@@ -3,14 +3,13 @@ import { allure } from "allure-playwright";
 import { App } from '../origin/pages/index';
 import { CommentBuilder } from '../origin/builders/builder.ui';
 
-const url = 'https://academybugs.com/find-bugs/';
 let app;
 let comment;
 
 test.describe('UI Tests Academybug', () => {
     test.beforeEach(async ({ page }) => {
         app = new App(page);
-        await app.mainPage.open(url);
+        await app.mainPage.open();
     });
 
     test('Ошибка отображения количества товара на главной странице @BUG', async () => { 

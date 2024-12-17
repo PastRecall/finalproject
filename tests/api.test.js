@@ -7,13 +7,12 @@ let postBuilder = new PostBuilder();
 let appApi = new AppApi();
 
 test.describe('API Tests Jsonplaceholder', () => {
-    let URL = 'https://jsonplaceholder.typicode.com';
     let id;
 
     test('Получение списка постов @API', async ({ request }) => {
         await allure.owner("Akhatova");
         await allure.tags("API");
-        const response = await appApi.apiService.getPosts(request, URL);
+        const response = await appApi.apiService.getPosts(request);
         const body = await response.json();
         id = body[0].id;
         await allure.step('Проверка, что длина массива постов больше 0', () => {
@@ -31,7 +30,7 @@ test.describe('API Tests Jsonplaceholder', () => {
     test('Получение конкретного поста @API', async ({ request }) => {
         await allure.owner("Akhatova");
         await allure.tags("API");
-        const response = await appApi.apiService.getPostById(request, URL, id);
+        const response = await appApi.apiService.getPostById(request, id);
         const body = await response.json();
         await allure.step('Проверка, что статус ответа равен 200', () => {
         expect(response.status()).toBe(200);});
@@ -45,7 +44,7 @@ test.describe('API Tests Jsonplaceholder', () => {
         await allure.owner("Akhatova");
         await allure.tags("API");
         const data = postBuilder.build();
-        const response = await appApi.apiService.createPost(request, URL, data);
+        const response = await appApi.apiService.createPost(request, data);
         const body = await response.json();
         await allure.step('Проверка, что статус ответа равен 201', () => {
         expect(response.status()).toBe(201);});
@@ -58,7 +57,7 @@ test.describe('API Tests Jsonplaceholder', () => {
         await allure.owner("Akhatova");
         await allure.tags("API");
         const data = postBuilder.build();
-        const response = await appApi.apiService.updatePost(request, URL, id, data);
+        const response = await appApi.apiService.updatePost(request, id, data);
         const body = await response.json();
         await allure.step('Проверка, что статус ответа равен 200', () => {
         expect(response.status()).toBe(200);});
@@ -70,7 +69,7 @@ test.describe('API Tests Jsonplaceholder', () => {
     test('Удаление поста @API', async ({ request }) => {
         await allure.owner("Akhatova");
         await allure.tags("API");
-        const response = await appApi.apiService.deletePost(request, URL, id);
+        const response = await appApi.apiService.deletePost(request, id);
         await allure.step('Проверка, что статус ответа равен 200', () => {
         expect(response.status()).toBe(200);
         });
